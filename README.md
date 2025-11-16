@@ -1,16 +1,16 @@
 # Pulsar2 User Manual
 
-[Web 预览](https://pulsar2-docs.readthedocs.io/zh_CN/latest/)
+[Web preview](https://pulsar2-docs.readthedocs.io/zh_CN/latest/)
 
-## 1. 项目背景
+## 1. Project background
 
-新一代 AI 工具链 *Pulsar2* 使用手册公共维护项目
+Public repository for the Pulsar2 AI toolchain user guide.
 
-- 提供统一的 AI 工具链文档内部展示地址
-- 降低 AI 工具链 Developer 维护成本
-- 降低 AI 工具链 User 学习成本
+- Provide a unified internal documentation portal for the AI toolchain
+- Reduce maintenance overhead for AI toolchain developers
+- Reduce the learning curve for AI toolchain users
 
-## 2. 本地运行指南
+## 2. Local run guide
 
 ### 2.1 git clone
 
@@ -18,7 +18,7 @@
 git clone https://github.com/AXERA-TECH/pulsar2-docs.git
 ```
 
-目录树如下:
+Directory tree:
 
 ```bash
 .
@@ -33,7 +33,7 @@ git clone https://github.com/AXERA-TECH/pulsar2-docs.git
     ├── appendix
     ├── conf.py
     ├── doc_update_info
-    ├── examples                # 以 .zip 格式保存了一些例子, 由于git pages的限制, 在线文档不支持点击下载操作
+    ├── examples                # Some examples are stored as .zip files; GitHub Pages may not support direct downloads from online docs
     ├── faq
     ├── index.rst
     ├── media
@@ -44,35 +44,35 @@ git clone https://github.com/AXERA-TECH/pulsar2-docs.git
     └── user_guides_runtime
 ```
 
-### 2.2 编译
+### 2.2 Build
 
-安装依赖
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-在项目根目录下执行以下命令
+Run the following commands from the project root
 
 ```bash
 $ make clean
 $ make html
 ```
 
-### 2.3 预览
+### 2.3 Preview
 
-完成编译后，使用浏览器查看 `build/html/index.html` . 如果在服务器上开发, 可以通过 `ssh` 端口转发的方式访问编译后的文档, 方法如下:
+After building, open `build/html/index.html` in your browser. If you built the docs on a remote server, you can use SSH port forwarding to access the compiled documentation. Example workflow:
 
-首先可以利用 `python` 在编译后的 `build/html/` 文件夹下启动一个 `http` 服务,
+Start a simple HTTP server in the compiled `build/html/` folder using Python:
 
 ```bash
 $ cd build/html/
-$ python -m SimpleHTTPServer 8005  # For python2, 端口可以自定义
+-$ python -m SimpleHTTPServer 8005  # For python2, you can customize the port
 # or
 $ python3 -m http.server 8005      # For python3, 端口可以自定义
 ```
 
-然后通过 `ssh` 链接服务器,
+Then forward the port through SSH and access the site in a local browser:
 
 ```bash
 ssh -L 8005:localhost:8005 username@server
@@ -80,10 +80,10 @@ ssh -L 8005:localhost:8005 username@server
 
 然后本地浏览器访问: `localhost:8005/index.html`
 
-## 3. 参考
+## 3. Reference
 
-- 本项目基于 Sphinx 搭建，关于更多 Sphinx 的信息请见 https://www.sphinx-doc.org/en/master/
+- This project is built with Sphinx. For more details see https://www.sphinx-doc.org/en/master/
 
-## 4. 发版
+## 4. Release
 
 

@@ -169,7 +169,7 @@ log 参考信息
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-embed 提取和优化
+Embed extraction and optimization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: shell  
@@ -179,7 +179,7 @@ embed 提取和优化
     ./tools/embed_process.sh Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int8/ Qwen/Qwen2.5-0.5B-Instruct-GPTQ-Int8-ctx-ax650/
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-输出文件说明
+Output file details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: shell  
@@ -222,7 +222,7 @@ embed 提取和优化
 其中 ``model.embed_tokens.weight.bfloat16.bin``, ``qwen2_p128_l0_together.axmodel ~ qwen2_p128_l23_together.axmodel``, ``qwen_post.axmodel`` 文件是上板运行所需要
 
 ~~~~~~~~~~~~~~~~~~~~~~~
-开发板运行
+Running on the board
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 本章节介绍如何在 ``AX650`` 开发板上运行 LLM 模型. 
@@ -236,7 +236,7 @@ embed 提取和优化
   - `Huggingface <https://huggingface.co/AXERA-TECH/Qwen2.5-0.5B-Instruct-CTX-Int8>`_
 
 
-先运行 tokenizer 解析器
+Start the tokenizer server first
 
 .. code-block:: shell
 
@@ -302,7 +302,7 @@ embed 提取和优化
 板端运行程序编译流程，请参考我们在 github 上的开源项目 `AX-LLM <https://github.com/AXERA-TECH/ax-llm>`_
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Tokenizer 解析器说明
+Tokenizer server explanation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ax-llm 项目中的 Tokenizer 解析器采用本地模块与 HTTP Server 两种方案，其中本地方案又尝试了 sentencepiece、tiktoken 两种方案。
@@ -341,8 +341,8 @@ Tokenizer HTTP Server 的特点：
 
 * python qwen2.5_tokenizer_uid.py --host xxx.xxx.xxx.xxx --port 12345，其中 --host xxx.xxx.xxx.xxx 设置 tokenizer 解析服务器的 IP 地址，确保 AX650N 能正常访问该地址
 * 可以在具备 python 环境的 AX650N 本地运行, 则直接运行 python qwen2.5_tokenizer_uid.py 
-* 修改 ./run_qwen2.5_0.5b_gptq_int8_ctx_ax650.sh 中 --filename_tokenizer_model 的 IP 信息和步骤1中的一致
-* 运行 ./run_qwen2.5_0.5b_gptq_int8_ctx_ax650.sh 即可
+* Update the IP value in --filename_tokenizer_model in ./run_qwen2.5_0.5b_gptq_int8_ctx_ax650.sh to match the host used in step 1
+* Run ./run_qwen2.5_0.5b_gptq_int8_ctx_ax650.sh to start the demo
 
 .. code-block:: shell
 
